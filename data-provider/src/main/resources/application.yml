@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: data-provider
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        group: DEFAULT_GROUP
+server:
+  port: 8081
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 100000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+  shareSecurityContext: true
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+

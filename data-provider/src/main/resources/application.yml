@@ -10,6 +10,9 @@ spring:
       discovery:
         server-addr: localhost:8848
         group: DEFAULT_GROUP
+  redis:
+    host: 127.0.0.1
+    port: 6379
 server:
   port: 8081
 hystrix:
